@@ -34,7 +34,8 @@ public:
         paramDisplay
     };
 
-    SurgeLookAndFeel() {
+    SurgeLookAndFeel() : surgeLogo(Drawable::createFromImageData (BinaryData::SurgeLogoOnlyBlue_svg, BinaryData::SurgeLogoOnlyBlue_svgSize))
+	{
         Colour surgeGrayBg = Colour(205,206,212);
         Colour surgeOrange = Colour(255,144,0);
         Colour surgeBlue = Colour(18,52,99);
@@ -64,8 +65,6 @@ public:
         setColour(SurgeColourIds::paramDisabledBg, black.interpolatedWith(surgeGrayBg, disableOpacity));
         setColour(SurgeColourIds::paramDisabledEdge, surgeBlue);
         setColour(SurgeColourIds::paramDisplay, white);
-        
-        surgeLogo = Drawable::createFromImageData (BinaryData::SurgeLogoOnlyBlue_svg, BinaryData::SurgeLogoOnlyBlue_svgSize);
     }
 
 
